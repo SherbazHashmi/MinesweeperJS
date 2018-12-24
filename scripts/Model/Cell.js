@@ -4,28 +4,31 @@ class Cell {
         this.isMine = null
         this.isMarked = false
         this.isRevealed = false
-        this.numberOfNeighbouringMines = -1;
+        this.numberOfNeighbouringMines = -1
         this.image = new Image()
-        setImage("img/blue.png")
-        
+        this.image.src = "img/blue.png"
         this.x = x
         this.y = y
     }
     
-    function setImage(src) {
+    setImage(src) {
     	this.image.src = src
     }
     
-    function setMine() {
+    setMine() {
     	this.isMine = true
-    	setImage()
+    	this.setImage()
     }
     
-    function setMarked() {
+    get getImage() {
+    	return this.image
+    }
+    
+    setMarked() {
     	this.isMarked = !isMarked
     }
     
-    function setRevealed() {
+    setRevealed() {
     	this.isRevealed = true;
     }
     

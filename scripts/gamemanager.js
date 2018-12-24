@@ -1,19 +1,31 @@
 //require('scripts/Model/Minefield.js');
 
+var image = new Image()
+image.src = "img/blue.png"
+
 var cvs = document.getElementById("canvas")
-var cxt = cvs.getContext("2d")
-var minefield = new Minefield(10,10,cvx,cxt)
+var ctx = cvs.getContext("2d")
+let debug_text = document.getElementById("debug")
+
 
 function init() {
-	//minefield = new Minefield(10,10, cvx, ctx)
+	this.minefield = new Minefield(cvs.height/ 100, cvs.width /100, cvs, ctx, debug_text)
+	console.log(cvs.height / 100)
+	console.log(cvs.width / 100)
 }
 
 function draw() {
+	
 	minefield.draw()
-	cvx.drawImage(new Image().src = "img/blue.png", 0,0)
-	requestAnimationFrame(draw);
+	}
+
+// Logs Error
+
+function log(input) {
+	debug_text.textContent = input
 }
 
-alert("TEST")
 init()
 draw()
+requestAnimationFrame(draw)
+

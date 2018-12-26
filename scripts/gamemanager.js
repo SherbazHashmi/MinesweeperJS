@@ -10,8 +10,6 @@ let debug_text = document.getElementById("debug")
 
 function init() {
 	this.minefield = new Minefield(cvs.height/ 100, cvs.width /100, cvs, ctx, debug_text)
-	console.log(cvs.height / 100)
-	console.log(cvs.width / 100)
 }
 
 function draw() {
